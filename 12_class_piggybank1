@@ -1,0 +1,30 @@
+class piggybank:
+    def __init__(self):
+        self.nueng = 0
+        self.song = 0
+        self.ha = 0
+        self.sib = 0
+
+    def add1(self, n):
+        self.nueng += n
+    def add2(self, n):
+        self.song += n
+    def add5(self, n):
+        self.ha += n
+    def add10(self, n):
+        self.sib += n
+    def __int__(self):
+        total = self.nueng + 2*self.song + 5*self.ha + 10*self.sib
+        return total
+
+    def __lt__(self, rhs):
+        return int(self) < int(rhs)
+
+    def __str__(self):
+        return '{' + "1:{}, 2:{}, 5:{}, 10:{}".format(self.nueng,self.song,self.ha,self.sib) + '}'
+        
+cmd1 = input().split(';')
+cmd2 = input().split(';')
+p1 = piggybank(); p2 = piggybank()
+for c in cmd1: eval(c)
+for c in cmd2: eval(c)
